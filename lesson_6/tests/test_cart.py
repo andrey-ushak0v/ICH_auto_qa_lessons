@@ -6,7 +6,7 @@ from pages.login_page import LoginPage
 from pages.cart_page import CartPage
 
 
-class TestInventory:
+class TestCart:
     @pytest.fixture(scope="class")
     def driver(self):
         driver = webdriver.Chrome()

@@ -38,7 +38,7 @@ class InventoryPage:
        """Добавляет товар в корзину по названию"""
        button_xpath = f"//div[text()='{item_name}']/ancestor::div[@class='inventory_item']//button"
        self.wait.until(EC.element_to_be_clickable((By.XPATH, button_xpath))).click()
-
+c
    def go_to_cart(self):
        """Переход в корзину"""
        self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "shopping_cart_link"))).click()

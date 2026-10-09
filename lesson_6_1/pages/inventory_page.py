@@ -31,6 +31,23 @@ class InventoryPage:
     def all_items_names_contains_sauce_labs(self):
         return all(name.startswith('Sauce Labs') for name in self.get_item_names())
 
+    def add_item_to_cart(self, item_name):
+        """Добавляет товар в корзину по названию"""
+        button_xpath = f"//div[text()='{item_name}']/ancestor::div[@class='inventory_item']//button"
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, button_xpath))).click()
+
+    def go_to_cart(self):
+        self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'shopping_cart_link'))).click()
+
+    def get_item_price(self, item_name):
+        """Получает цену товара по его названию (в формате строки с $)"""
+        item_xpath = f"//div[text()='{item_name}']/ancestor::div[@class='inventory_item']//div[@class='inventory_item_price']"
+        return self.wait.until(EC.presence_of_element_located((By.XPATH, item_xpath))).text
+
+
+
+
+
 
 
 

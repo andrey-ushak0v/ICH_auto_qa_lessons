@@ -2,19 +2,21 @@ import pytest
 from selenium import webdriver
 from pages.inventory_page import InventoryPage
 from pages.login_page import LoginPage
+from tests.base_test import BaseTest
 
 ITEMS_AMOUNT = 6
 
 
-class TestInventory:
+class TestInventory(BaseTest):
 
-    @pytest.fixture(scope='class')
-    def driver(self):
-        driver = webdriver.Chrome()
-        driver.maximize_window()
-        driver.get("https://www.saucedemo.com/")
-        yield driver
-        driver.quit()
+
+    #@pytest.fixture(scope='class')
+    #def driver(self):
+    #    driver = webdriver.Chrome()
+    #    driver.maximize_window()
+    #    driver.get("https://www.saucedemo.com/")
+    #    yield driver
+    #    driver.quit()
 
     @pytest.fixture(scope='class')
     def inventory_page(self, driver):

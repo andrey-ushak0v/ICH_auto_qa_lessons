@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from locators.login_page_locators import LoginPageLocators
 
 
 class LoginPage:
@@ -12,13 +13,13 @@ class LoginPage:
         self.driver.get("https://www.saucedemo.com/")
 
     def get_username_input(self):
-        return self.wait.until(EC.presence_of_element_located((By.ID, "user-name")))
+        return self.wait.until(EC.presence_of_element_located((By.ID, LoginPageLocators.username_input)))
 
     def get_password_input(self):
-        return self.wait.until(EC.presence_of_element_located((By.ID, "password")))
+        return self.wait.until(EC.presence_of_element_located((By.ID, LoginPageLocators.password_input)))
 
     def get_login_button(self):
-        return self.wait.until(EC.presence_of_element_located((By.ID, "login-button")))
+        return self.wait.until(EC.presence_of_element_located((By.ID, LoginPageLocators.login_button)))
 
     def enter_username(self, username):
         username_field = self.get_username_input()

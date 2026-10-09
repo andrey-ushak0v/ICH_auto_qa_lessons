@@ -18,3 +18,5 @@ class CartPage:
    def proceed_to_checkout(self):
        self.wait.until(EC.element_to_be_clickable((By.ID, "checkout"))).click()
 
+
+
