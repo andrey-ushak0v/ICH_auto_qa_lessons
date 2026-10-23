@@ -1,1 +1,0 @@
-HOMEPAGE = 'https://itcareerhub.de/ru'
