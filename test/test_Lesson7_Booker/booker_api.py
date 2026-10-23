@@ -7,7 +7,7 @@ load_dotenv()
 BASE_URL = os.getenv("BASE_URL")
 
 
-
+# класс с запросами в апи
 class BookerApi:
     """Класс для взаимодействия с API Restful-Booker"""
 
